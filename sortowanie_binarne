@@ -1,0 +1,34 @@
+import math
+
+liczby=[3,8,1,15,2,7]
+
+liczby.sort()
+
+print(liczby)
+
+n=int(input("Jakiej liczby szukasz: "))
+
+left = 0
+right = len(liczby) - 1
+
+znaleziono=False
+
+while(True):
+    middle = (left + right) // 2
+
+    if n < liczby[middle]:
+        right=middle
+    
+    if n> liczby[middle]:
+        left=middle
+    
+    if right-left==1:
+        print("Nie znaleziono")
+        break
+
+    if n==liczby[middle]:
+        print("Twoja liczba ma index ",middle)
+        znaleziono=True
+        break
+
+
