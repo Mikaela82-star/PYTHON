@@ -1,0 +1,34 @@
+def przestepny(rok):
+  return (rok%4==0 and rok%100!=0)
+
+def dni_miesiaca(rok,mies):
+  if mies in [4,6,9,11]:
+    return 30
+  elif mies==2:
+    return 29 if przestepny(rok) else 28
+  else:
+    return 31
+
+def dni_od_r(rok,mies,dzien):
+    dni=dzien
+    for y in range(0,rok):
+        dni += 366 if przestepny(y) else 365
+    for m in range(1,mies):
+       dni += dni_miesiaca(rok,m)
+    return dni
+
+print("Oliwia Sierak 19.11.2024\n||Oblicza roznice dat||")
+
+rok1=int(input("Podaj rok daty1: "))
+miesiac1=int(input("Podaj miesiac daty1: "))
+dni1=int(input("Podaj dni daty1: "))
+
+rok2=int(input("Podaj rok daty2: "))
+miesiac2=int(input("Podaj miesiac daty2: "))
+dni2=int(input("Podaj dni daty2: "))
+
+dnii1=dni_od_r(rok1,miesiac1,dni1)
+dnii2=dni_od_r(rok2,miesiac2,dni2)
+
+roznica_dni=abs(dnii1-dnii2)
+print("Daty sie roznia o: ",roznica_dni," dni")
