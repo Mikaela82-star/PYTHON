@@ -1,0 +1,25 @@
+#napisz kod co wypisuje nazwe cyfry do bilionów
+
+a = input("Podaj liczbe: ")
+len_a = len(a)
+
+cyfry = ["","jeden","dwa","trzy","cztery","pięć","sześć","siedem","osiem","dziewięć"]
+dziesiatki = ["dziesięć","jedenaście","dwanaście","trzynaście","czternaście","piętnaście","szesnaście","siedemnaście","osiemnaście","dziewiętnaście"]
+potem=["dzieścia","dzieści","dziesiąt"]
+
+print("kos",str(len_a))
+
+def f():
+    match len_a:
+        case 1:
+            return print("tak",str(cyfry[a-1]))
+        case 2:
+                if a[0]=="1":
+                    return print("yes",str(dziesiatki[int(a)]))
+                elif a[0]=="2":
+                    return print("los")
+                #elif a[0]==2:
+                 #   return print(dziesiatki[i - 1])
+        #case 3:
+        #    return
+f()
