@@ -31,6 +31,7 @@ def f():
                 return print(dwudzies(0))
         case 3:
             if a[0]=="1":
-                print(po[int(a[0])-1],dwudzies(1))
+                print(po[int(a[0])-1], end=" ")
+                print(dwudzies(1))
                 
 f()
