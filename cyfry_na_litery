@@ -6,20 +6,31 @@ len_a = len(a)
 cyfry = ["","jeden","dwa","trzy","cztery","pięć","sześć","siedem","osiem","dziewięć"]
 dziesiatki = ["dziesięć","jedenaście","dwanaście","trzynaście","czternaście","piętnaście","szesnaście","siedemnaście","osiemnaście","dziewiętnaście"]
 potem=["dzieścia","dzieści","dziesiąt"]
+po=["sto","dwiescie","sta","set"]
 
-print("kos",str(len_a))
+#print("kos",str(len_a))
+
+def dwudzies(b):
+    if a[b]=="1":
+        return print(cyfry[int(a[b+1])])
+    if a[b]=="2":
+        return print(str(cyfry[int(a[b])]+str(potem[0])),"",str(cyfry[int(a[b+1])]))
+    elif a[b]=="3":
+        return print(str(cyfry[int(a[b])]+str(potem[1])),"",str(cyfry[int(a[b+1])]))
+    elif int(a[b]) > 4 and int(a[b]) < 100:
+        return print(str(cyfry[int(a[b])]+str(potem[2])),"",str(cyfry[int(a[b+1])]))
 
 def f():
     match len_a:
         case 1:
-            return print("tak",str(cyfry[a-1]))
+            return print(str(cyfry[int(a)]))
         case 2:
-                if a[0]=="1":
-                    return print("yes",str(dziesiatki[int(a)]))
-                elif a[0]=="2":
-                    return print("los")
-                #elif a[0]==2:
-                 #   return print(dziesiatki[i - 1])
-        #case 3:
-        #    return
+            if a[0]=="1":
+                return print("yes",str(dziesiatki[int(a[1])]))
+            elif int(a[0])>=2:
+                return print(dwudzies(0))
+        case 3:
+            if a[0]=="1":
+                print(po[int(a[0])-1],dwudzies(1))
+                
 f()
